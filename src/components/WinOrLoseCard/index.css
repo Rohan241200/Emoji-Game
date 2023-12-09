@@ -1,0 +1,85 @@
+.winorlose {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  border: 2px solid #ffffff30;
+  background-color: #ffffff33;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.winorlose-context {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+.winorlose-heading {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: Roboto;
+  color: #ffffff;
+  text-align: center;
+}
+
+.winorlose-score {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Roboto;
+  color: #6a59ff;
+  text-align: center;
+}
+
+.play-again {
+  background-color: #ffce27;
+  color: #3d3d3d;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Roboto;
+  align-self: center;
+}
+
+.winorlose-img {
+  width: 60%;
+  order: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .winorlose {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .winorlose-context {
+    order: 0;
+    margin-right: 40px;
+  }
+
+  .winorlose-heading {
+    font-size: 48px;
+  }
+
+  .winorlose-score {
+    font-size: 34px;
+  }
+
+  .play-again {
+    font-size: 18px;
+  }
+
+  .winorlose-img {
+    width: 40%;
+  }
+}

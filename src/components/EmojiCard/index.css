@@ -1,0 +1,37 @@
+.list {
+  background-color: #ffffff33;
+  border: 2px solid #ffffff30;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  width: 25%;
+}
+
+.button {
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  border: none;
+}
+
+.emoji-img {
+  width: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .list {
+    width: 20%;
+  }
+
+  .button {
+    flex-grow: 1;
+  }
+
+  .emoji-img {
+    width: 100px;
+  }
+}
