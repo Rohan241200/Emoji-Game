@@ -5,11 +5,21 @@ import EmojiCard from '../EmojiCard'
 import WinOrLose from '../WinOrLoseCard'
 
 class EmojiGame extends Component {
-  state = {score: 0, topScore: 0, restartGame: true, clickCheckEmoji: []}
+  state = {
+    score: 0,
+    topScore: 0,
+    restartGame: true,
+    clickCheckEmoji: [],
+  }
 
   onGameRestart = () => {
     const {score} = this.state
-    this.setState({restartGame: true, topScore: score, score: 0})
+    this.setState({
+      restartGame: true,
+      topScore: score,
+      score: 0,
+      clickCheckEmoji: [],
+    })
   }
 
   onClickEmojiChange = id => {
@@ -18,14 +28,16 @@ class EmojiGame extends Component {
     const checkIsSame = clickCheckEmoji.includes(id)
     const isLength = clickCheckEmoji.length
 
-    console.log(checkIsSame)
-    if (!checkIsSame) {
+    if (checkIsSame) {
+      this.setState({restartGame: false})
+    } else {
+      if (isLength === emojisList.length) {
+        this.setState({restartGame: false, topScore: 0})
+      }
       this.setState(prevState => ({
         clickCheckEmoji: [...prevState.clickCheckEmoji, id],
         score: prevState.score + 1,
       }))
-    } else {
-      this.setState({restartGame: false})
     }
   }
 
@@ -39,7 +51,7 @@ class EmojiGame extends Component {
     const randomE = shuffledEmojisList()
     return (
       <>
-        <NavBar score={score} topScore={topScore} />
+        <NavBar score={score} topScore={topScore} noScore={restartGame} />
         <div className="bg-container">
           <div className="bg-card">
             {restartGame && (

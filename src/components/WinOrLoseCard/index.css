@@ -32,6 +32,14 @@
   text-align: center;
 }
 
+.win-heading {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Roboto;
+  text-align: center;
+}
+
 .play-again {
   background-color: #ffce27;
   color: #3d3d3d;
@@ -81,5 +89,9 @@
 
   .winorlose-img {
     width: 40%;
+  }
+
+  .win-heading {
+    font-size: 24px;
   }
 }
